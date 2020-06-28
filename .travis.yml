@@ -1,0 +1,25 @@
+language: python
+python:
+  - "3.7"
+
+addons:
+  apt:
+    packages:
+    - tree
+
+cache: 
+  apt: true
+  npm: true
+  directories:
+     - $HOME/.cache/pip
+     - /home/travis/virtualenv/python3.7.1/lib/python3.7/site-packages
+
+
+script:
+  - git clone --depth 1 ${TRAVISCI_REF}
+  - chmod +x ./travisci/resource.sh
+  - ./travisci/resource.sh
+
+branches:
+  only:
+    - master
