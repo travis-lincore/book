@@ -16,7 +16,7 @@ cache:
 
 
 script:
-  - git clone --depth 1 ${TRAVISCI_REF}
+  - git clone ${TRAVISCI_REF}
   - chmod +x ./travisci/resource.sh
   - ./travisci/resource.sh
 
